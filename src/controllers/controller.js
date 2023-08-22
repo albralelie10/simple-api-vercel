@@ -1,11 +1,9 @@
-const DATA=[
-    {name:"sansa"},{name:"gargame"},{name:"cleo"}
-]
+import Book from "../model/books.js"
 
 export const getAllData=async(req,res)=>{
     try{
-        return res.status(200).json({data:DATA})
-
+        const books=await Book.find()
+        return res.status(200).json({data:books})
     }catch(error){
         res.status(500).json({msg:"Server Error"})
     }
