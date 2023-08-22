@@ -8,7 +8,7 @@
 <body>
     <script>
         
-        fetch("http://localhost:3000/api")
+        fetch("https://simple-api-vercel-gamma.vercel.app/api")
             .then(res=>res.json())
                 .then(obj=>{
                     const html=obj.data.map(item=>{
@@ -32,7 +32,7 @@
                     if(e.target.matches("button")){
                         const article=e.target.closest("article")
                         const id=article.dataset.id
-                        fetch(`http://localhost:3000/api/${id}`,{
+                        fetch(`https://simple-api-vercel-gamma.vercel.app/api/${id}`,{
                             method:"DELETE"
                         })
                         .then(res=>res)
