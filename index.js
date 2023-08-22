@@ -6,8 +6,6 @@ import { connectDB } from "./src/db/connection.js"
 import dotenv from "dotenv"
 dotenv.config()
 
-console.log(process.env.MONGO_URI)
-
 app.use("/api",router)
 
 app.get("/",(req,res)=>{
@@ -25,12 +23,5 @@ app.get("/",(req,res)=>{
 })
 
 
-const start=async()=>{
-    try{
-        await connectDB(process.env.MONGO_URI)
-        app.listen(PORT,()=>console.log(`Server runnign in port ${PORT}`))
-    }catch(error){
-        console.log(error)
-    }
-}
-start();
+await connectDB(process.env.MONGO_URI)
+app.listen(PORT,()=>console.log(`Server runnign in port ${PORT}`))
