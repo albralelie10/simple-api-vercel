@@ -13,7 +13,6 @@ app.use(cors({
 }))
 
 
-app.use(express.static("web"))
 app.use("/api",router)
 
 await connectDB(process.env.MONGO_URI)
