@@ -12,6 +12,7 @@ app.use(cors({
     methods:["GET","DELETE","PUT","POST","OPTIONS"]
 }))
 
+
 app.use(express.static("web"))
 app.use("/api",router)
 
