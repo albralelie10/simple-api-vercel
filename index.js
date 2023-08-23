@@ -18,11 +18,9 @@ app.use(cors({
     methods:["GET","DELETE","PUT","POST","OPTIONS"]
 }))
 
-
 app.use("/api",router)
 
 await connectDB(process.env.MONGO_URI)
 app.listen(PORT,()=>console.log(`Server runnign in port ${PORT}`))
-
 
 export default app
